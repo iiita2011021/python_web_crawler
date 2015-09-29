@@ -70,19 +70,11 @@ def crawl_web(seed_link):
 		if tocrawl:
 			page_url = tocrawl[-1]
 			page_source = get_page(page_url)
-			#print "index"
-			#print index
-			#print "tocrawl"
-			#print tocrawl
-			#print "crawled"
-			#print crawled
 			contents = strip_tags(page_source)
-			print contents
-
+			
 			add_page_to_index(index, page_url, contents)
 			tmp_list = extract_all_url(page_source)
-			#print "tmp_list"
-			#print tmp_list
+			
 			popped = tocrawl.pop()
 			crawled.append(popped)
 			for e in tmp_list:
@@ -96,17 +88,19 @@ def crawl_web(seed_link):
 
 list_url_collected = []
 seed_link = 'https://www.udacity.com/cs101x/index.html'
-print seed_link
+#seed_link = 'https://www.nba.com'
+
+#print seed_link
 #seed_page_source = get_page(seed_link)
 #next_url , end_string = next_url(seed_page_source)
 #list_url_collected = extract_all_url(seed_page_source,seed_link)
-list_url_collected = crawl_web(seed_link)
+indexed_list_url_collected = crawl_web(seed_link)
 
 
 
 print ''
 print ''
-for e in list_url_collected:
+for e in indexed_list_url_collected:
 	print e
 
 
