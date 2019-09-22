@@ -1,2 +1,2 @@
 # python_web_crawler
-Dolcera python training
+python training
