@@ -1,2 +1,2 @@
-# python_web_crawler
+# python web crawler
 python training
